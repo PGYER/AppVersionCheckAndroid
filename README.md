@@ -6,7 +6,7 @@
 
 首先拷贝本项目中的 com.pgyer.pgyerappupdater.pgyerutils 文件夹中的的三个文件到您的 Android 项目中，然后在需要获取更新版本的位置，调用类中提供的方法方法 `PgyUpdateVersion.checkVersionUpdate()` 方法，示例如下：
 
-```
+```java
 PgyUpdateVersion.checkVersionUpdate("<YOUR-PGYER_API_KEY>","<YOUR-PGYER_APP_KEY>","","<APP-VERSION-NAME>",new PgyCheckoutCallBack() {
   @Override
   public void onNewVersionExist(PgyCheckSoftModel model) {
