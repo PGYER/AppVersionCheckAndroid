@@ -1,39 +1,28 @@
-# Android app 使用 蒲公英 版本更新 说明
+# PGYERAppUpdater
 
-## 两种接入方式：
+本项目演示了如何使用 PGYER 蒲公英的 API 来检查 Android App 的版本是否有更新
 
-### $\color{blue}{使用蒲公英提供的类直接调用方法}$
-    
-   #### a、拷贝本项目中的 com.pgyer.pgyerappupdater.pgyerutils 文件夹中的的三个文件到Android 项目中
-   ####
-   #### b、在需要获取更新版本的位置，调用类中提供的方法方法PgyUpdateVersion.checkVersionUpdate 
-   ####
-        PgyUpdateVersion.checkVersionUpdate("您的apiKey","您的appKey","","build.gradle 中的 versionName",new PgyCheckoutCallBack() {
+### 使用方式
 
-                    @Override
-                    public void onNewVersionExist(PgyCheckSoftModel model) {
-                        tvShow.setText("有新版本："+JsonUtils.toJSONString(model));
+首先拷贝本项目中的 com.pgyer.pgyerappupdater.pgyerutils 文件夹中的的三个文件到您的 Android 项目中，然后在需要获取更新版本的位置，调用类中提供的方法方法 `PgyUpdateVersion.checkVersionUpdate()` 方法，示例如下：
 
-                    }
+```
+PgyUpdateVersion.checkVersionUpdate("<YOUR-PGYER_API_KEY>","<YOUR-PGYER_APP_KEY>","","<APP-VERSION-NAME>",new PgyCheckoutCallBack() {
+  @Override
+  public void onNewVersionExist(PgyCheckSoftModel model) {
+    // 检测到新版本，可根据 JsonUtils.toJSONString(model) 获取到版本信息
+  }
 
-                    @Override
-                    public void onNonentityVersionExist(String error) {
-                        tvShow.setText("无新版本"+error);
-                    }
+  @Override
+  public void onNonentityVersionExist(String error) {
+    // 没有新版本
+  }
 
-                    @Override
-                    public void onFail(String error) {
-                        tvShow.setText("请求失败："+error);
-                    }
-                });
-   ####
-   #### c、在onNewVersionExist 中那到新版本中的apk信息，（PgyCheckSoftModel 已备注具体字段说明）
+  @Override
+  public void onFail(String error) {
+    // 请求失败
+  }
+});
+```
 
-
-### 
-### $\color{blue}{有自己的网络访问框架}$
-
-   #### a、自行调用蒲公英版本检查接口 
-   * 接口说明文档：https://www.pgyer.com/doc/view/api#appUpdate
-   #### b、得到返回数据自行实现相关更新逻辑
-    
+如果存在新版本，那么在 `onNewVersionExist` 中可以获取到新版本中的信息。在 `PgyCheckSoftModel` 中已备注具体字段说明
