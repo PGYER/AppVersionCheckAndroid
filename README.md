@@ -1,6 +1,6 @@
 # AppVersionCheckAndroid
 
-本项目演示了如何使用 PGYER 蒲公英的 API 来检查 Android App 的版本是否有更新
+本项目演示了如何使用 PGYER 蒲公英的 API 在 Android App 中检查版本是否有更新
 
 ### 使用方式
 
