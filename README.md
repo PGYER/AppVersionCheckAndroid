@@ -33,6 +33,7 @@
 ### 
 ### $\color{blue}{有自己的网络访问框架}$
 
-   #### a、自行调用蒲公英版本检查接口 （接口说明文档：https://www.pgyer.com/doc/view/api#appUpdate 支持GET 和 POST 请求） 
+   #### a、自行调用蒲公英版本检查接口 
+   * 接口说明文档：https://www.pgyer.com/doc/view/api#appUpdate
    #### b、得到返回数据自行实现相关更新逻辑
     
