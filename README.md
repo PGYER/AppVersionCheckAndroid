@@ -1,3 +1,5 @@
+> 此项目已经归档，如果需要使用 App 检查更新功能请移步至 [PGYER/AppUpdateChecker](https://github.com/PGYER/AppUpdateChecker)
+
 # AppVersionCheckAndroid
 
 本项目演示了如何使用 PGYER 蒲公英的 API 在 Android App 中检查版本是否有更新
